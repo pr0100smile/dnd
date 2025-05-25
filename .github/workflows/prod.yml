@@ -2,7 +2,6 @@ name: Netology AHJ
 
 on: [push, pull_request]
 
-# Down scope as necessary via https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
 permissions:
   checks: write
   contents: write
@@ -42,10 +41,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: github/pages-action@v4
+        uses: github/pages-action@v2
         with:
           path: 'dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: github/pages-action@v2
